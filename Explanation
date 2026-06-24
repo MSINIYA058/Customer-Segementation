@@ -1,0 +1,83 @@
+Customer Segmentation Using Clustering
+1. Introduction
+Customer Segmentation is the process of dividing customers into different groups based on their purchasing behavior and income. It helps businesses understand customer needs and create targeted marketing strategies. In this project, K-Means Clustering is used to group customers with similar characteristics.
+
+2. Objective
+    • To analyze customer data. 
+    • To group customers into different segments. 
+    • To identify high-value and low-value customers. 
+    • To improve marketing and business decision-making. 
+
+3. System Modules
+Module 1: Data Collection
+    • Collect customer dataset from CSV files. 
+    • Dataset contains customer income and spending information. 
+Module 2: Data Preprocessing
+    • Load dataset using Pandas. 
+    • Handle missing values. 
+    • Select required attributes. 
+Module 3: Feature Selection
+Selected features:
+    • Income 
+    • MntWines 
+    • MntMeatProducts 
+    • MntGoldProds 
+Module 4: Clustering Module
+    • Apply K-Means Clustering algorithm. 
+    • Group customers into 3 clusters. 
+Module 5: Visualization Module
+    • Display customer segments using scatter plots. 
+    • Analyze customer groups visually. 
+Module 6: Result Module
+    • Display cluster information. 
+    • Save clustered customer data into a CSV file. 
+
+4. System Architecture
+Customer Dataset
+        |
+        v
+Data Preprocessing
+        |
+        v
+Feature Selection
+        |
+        v
+K-Means Clustering
+        |
+        v
+Customer Segments
+        |
+        v
+Visualization & Output
+
+5. Methodology
+Step 1: Data Collection
+    • Import customer dataset from CSV file. 
+Step 2: Data Preprocessing
+    • Remove missing values. 
+    • Prepare data for clustering. 
+Step 3: Feature Selection
+Choose important features:
+    • Income 
+    • MntWines 
+    • MntMeatProducts 
+    • MntGoldProds 
+Step 4: K-Means Clustering
+    • Apply K-Means algorithm. 
+    • Divide customers into 3 groups. 
+Step 5: Visualization
+    • Generate scatter plot. 
+    • Display customer segments. 
+Step 6: Result Generation
+    • Save clustered data into output CSV file. 
+
+6. Algorithm
+K-Means Clustering Algorithm
+    1. Select the number of clusters (K). 
+    2. Initialize cluster centroids. 
+    3. Assign customers to the nearest centroid. 
+    4. Update centroid positions. 
+    5. Repeat until centroids do not change. 
+    6. Form final customer segments. 
+Conclusion
+Customer Segmentation Using Clustering is an effective technique for analyzing customer behavior. By applying K-Means Clustering, customers are grouped into meaningful segments, enabling businesses to improve marketing strategies, customer satisfaction, and overall business performance.
