@@ -1,0 +1,59 @@
+CUSTOMER SEGMENTATION USING CLUSTERING
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+
+# Load dataset
+df = pd.read_csv("C:\\CS proj(mini)\\Customer Personality Analysis Dataset.csv")
+print(df.head())
+   Unnamed: 0    ID Year_Birth  ... Z_CostContact Z_Revenue  Response
+0           0  5524       1957  ...           3.0      11.0       1.0
+1           1  2174       1954  ...           3.0      11.0       0.0
+2           2  4141       1965  ...           3.0      11.0       0.0
+3           3  6182       1984  ...           3.0      11.0       0.0
+4           4  5324       1981  ...           3.0      11.0       0.0
+
+
+# Select features for customer segmentation
+X = df[['Income', 'MntWines', 'MntMeatProducts', 'MntGoldProds']]
+
+# Remove missing values
+X = X.dropna()
+
+# Apply K-Means Clustering
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+X['Cluster'] = kmeans.fit_predict(X)
+
+# Display first few records
+print(X.head())
+    Income  MntWines  MntMeatProducts  MntGoldProds  Cluster
+0  58138.0     635.0            546.0          88.0        0
+1  46344.0      11.0              6.0           6.0        1
+2  71613.0     426.0            127.0          42.0        0
+3  26646.0      11.0             20.0           5.0        1
+4  58293.0     173.0            118.0          15.0        0
+
+# Number of customers in each cluster
+print("\nCustomers in each Cluster:")
+print(X['Cluster'].value_counts())
+Customers in each Cluster:
+Cluster
+0    1154
+1    1064
+2       1
+
+# Visualization
+plt.figure(figsize=(8,6))
+plt.scatter(X['Income'], X['MntWines'], c=X['Cluster'])
+plt.xlabel("Income")
+plt.ylabel("Wine Spending")
+plt.title("Customer Segmentation Using K-Means Clustering")
+plt.show()
+
+
+# Save output
+X.to_csv("Customer_Segmentation_Output.csv", index=False)
+
+print("\nCustomer Segmentation Completed Successfully!")
+FINAL OUTPUT:
+Customer Segmentation Completed Successfully!
